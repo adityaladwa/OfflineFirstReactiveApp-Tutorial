@@ -6,6 +6,7 @@ import android.provider.BaseColumns;
 import android.support.annotation.NonNull;
 
 /**
+ *
  * Created by Aditya on 23-Oct-16.
  */
 
@@ -38,7 +39,7 @@ public class DatabaseContract {
         public static String getPostCreateQuery() {
             return "CREATE TABLE " + TABLE_NAME + " (" +
                     COLUMN_ID + " LONG NOT NULL PRIMARY KEY, " +
-                    COLUMN_USER_ID + " LONG NOT NULL, " +
+                    COLUMN_USER_ID + " LONG , " +
                     COLUMN_TITLE + " TEXT NOT NULL, " +
                     COLUMN_BODY + " TEXT NOT NULL" + ");";
         }

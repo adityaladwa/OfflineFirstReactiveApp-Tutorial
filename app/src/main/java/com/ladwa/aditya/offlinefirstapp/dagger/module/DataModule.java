@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.ladwa.aditya.offlinefirstapp.data.local.AppLocalDataStore;
 import com.ladwa.aditya.offlinefirstapp.data.remote.AppRemoteDataStore;
 
 import javax.inject.Singleton;
@@ -73,9 +74,23 @@ public class DataModule {
         return retrofit;
     }
 
+
+    @Provides
+    @Singleton
+    AppLocalDataStore porvidesAppLocalDataStore(Application context) {
+        return AppLocalDataStore.getInstance(context);
+    }
+
     @Provides
     @Singleton
     AppRemoteDataStore providesRepository() {
         return AppRemoteDataStore.getInstance();
     }
+
+//    @Provides
+//    @Singleton
+//    AppRepository providesRepository(Application context){
+//        return
+//    }
+
 }

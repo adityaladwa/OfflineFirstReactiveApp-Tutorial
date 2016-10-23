@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.support.annotation.Nullable;
 
 /**
+ *
  * Created by Aditya on 23-Oct-16.
  */
 
@@ -93,7 +94,7 @@ public class Provider extends ContentProvider {
         final SQLiteDatabase db = mDbHelper.getWritableDatabase();
         Uri returnUri;
         switch (sUriMatcher.match(uri)) {
-            //Case for User
+            //Case for Post
             case POST_DIR:
                 long _id = db.insert(DatabaseContract.Post.TABLE_NAME, null, contentValues);
                 if (_id > 0)

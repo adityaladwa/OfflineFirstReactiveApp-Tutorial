@@ -17,6 +17,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name=".data.local.Provider"
+            android:authorities="com.ladwa.aditya.offlinefirstapp"
+            android:exported="false"
+            android:syncable="true" />
     </application>
 
 </manifest>

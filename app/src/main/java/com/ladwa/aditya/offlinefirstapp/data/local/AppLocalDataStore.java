@@ -24,10 +24,10 @@ import rx.Observable;
 public class AppLocalDataStore implements AppDataStore {
     private static AppLocalDataStore INSTANCE;
     private static StorIOContentResolver mStorIOContentResolver;
-    private Context mContext;
 
-    private AppLocalDataStore(Context context) {
 
+
+    private AppLocalDataStore(@NonNull Context context) {
         mStorIOContentResolver = DefaultStorIOContentResolver.builder()
                 .contentResolver(context.getContentResolver())
                 .addTypeMapping(Post.class, ContentResolverTypeMapping.<Post>builder()
@@ -57,5 +57,9 @@ public class AppLocalDataStore implements AppDataStore {
                 .withQuery(Query.builder().uri(DatabaseContract.Post.CONTENT_URI).build())
                 .prepare()
                 .asRxObservable();
+    }
+
+    public static void savePostToDatabase(List<Post> posts) {
+        mStorIOContentResolver.put().objects(posts).prepare().executeAsBlocking();
     }
 }
