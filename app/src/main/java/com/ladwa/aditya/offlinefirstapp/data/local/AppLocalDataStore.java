@@ -15,6 +15,8 @@ import com.pushtorefresh.storio.contentresolver.queries.Query;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import rx.Observable;
 
 /**
@@ -22,12 +24,11 @@ import rx.Observable;
  */
 
 public class AppLocalDataStore implements AppDataStore {
-    private static AppLocalDataStore INSTANCE;
-    private static StorIOContentResolver mStorIOContentResolver;
 
+    private StorIOContentResolver mStorIOContentResolver;
 
-
-    private AppLocalDataStore(@NonNull Context context) {
+    @Inject
+    public AppLocalDataStore(@NonNull Context context) {
         mStorIOContentResolver = DefaultStorIOContentResolver.builder()
                 .contentResolver(context.getContentResolver())
                 .addTypeMapping(Post.class, ContentResolverTypeMapping.<Post>builder()
@@ -36,17 +37,6 @@ public class AppLocalDataStore implements AppDataStore {
                         .deleteResolver(new PostStorIOContentResolverDeleteResolver())
                         .build()
                 ).build();
-    }
-
-
-    public static AppLocalDataStore getInstance(@NonNull Context context) {
-        if (INSTANCE == null)
-            INSTANCE = new AppLocalDataStore(context);
-        return INSTANCE;
-    }
-
-    public static void destoryInstance() {
-        INSTANCE = null;
     }
 
 
@@ -59,7 +49,7 @@ public class AppLocalDataStore implements AppDataStore {
                 .asRxObservable();
     }
 
-    public static void savePostToDatabase(List<Post> posts) {
+    public void savePostToDatabase(List<Post> posts) {
         mStorIOContentResolver.put().objects(posts).prepare().executeAsBlocking();
     }
 }

@@ -78,13 +78,13 @@ public class DataModule {
     @Provides
     @Singleton
     AppLocalDataStore porvidesAppLocalDataStore(Application context) {
-        return AppLocalDataStore.getInstance(context);
+        return new AppLocalDataStore(context);
     }
 
     @Provides
     @Singleton
     AppRemoteDataStore providesRepository() {
-        return AppRemoteDataStore.getInstance();
+        return new AppRemoteDataStore();
     }
 
 //    @Provides

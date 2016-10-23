@@ -26,21 +26,10 @@ public class AppRemoteDataStore implements AppDataStore {
     @Inject
     AppLocalDataStore appLocalDataStore;
 
-    private static AppRemoteDataStore INSTANCE = null;
-
-    private AppRemoteDataStore() {
+    public AppRemoteDataStore() {
         App.getAppComponent().inject(this);
     }
 
-    public static AppRemoteDataStore getInstance() {
-        if (INSTANCE == null)
-            INSTANCE = new AppRemoteDataStore();
-        return INSTANCE;
-    }
-
-    public static void destoryInstance() {
-        INSTANCE = null;
-    }
 
     @Override
     public Observable<List<Post>> getPost() {
