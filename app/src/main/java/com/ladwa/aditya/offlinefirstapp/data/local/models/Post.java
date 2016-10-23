@@ -7,6 +7,7 @@ import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteColumn;
 import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteType;
 
 /**
+ *
  * Created by Aditya on 23-Oct-16.
  */
 
@@ -17,40 +18,59 @@ public class Post {
 
     @StorIOSQLiteColumn(name = DatabaseContract.Post.COLUMN_ID, key = true)
     @StorIOContentResolverColumn(name = DatabaseContract.Post.COLUMN_ID, key = true)
-    private final Integer id;
+    public  Integer id;
 
     @StorIOSQLiteColumn(name = DatabaseContract.Post.COLUMN_USER_ID)
     @StorIOContentResolverColumn(name = DatabaseContract.Post.COLUMN_USER_ID)
-    private final Integer userId;
+    public  Integer userId;
 
     @StorIOSQLiteColumn(name = DatabaseContract.Post.COLUMN_TITLE)
     @StorIOContentResolverColumn(name = DatabaseContract.Post.COLUMN_TITLE)
-    private final String title;
+    public  String title;
 
     @StorIOSQLiteColumn(name = DatabaseContract.Post.COLUMN_BODY)
     @StorIOContentResolverColumn(name = DatabaseContract.Post.COLUMN_BODY)
-    private final String body;
+    public  String body;
 
-    public Post(Integer userId, Integer id, String title, String body) {
-        this.userId = userId;
+    public Post(Integer id, Integer userId, String title, String body) {
         this.id = id;
+        this.userId = userId;
         this.title = title;
         this.body = body;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public Post() {
     }
 
     public Integer getId() {
         return id;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
     public String getTitle() {
         return title;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getBody() {
         return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
     }
 }

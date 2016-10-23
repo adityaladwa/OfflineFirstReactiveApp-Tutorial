@@ -2,6 +2,8 @@ package com.ladwa.aditya.offlinefirstapp.data;
 
 import com.ladwa.aditya.offlinefirstapp.data.local.models.Post;
 
+import java.util.List;
+
 import rx.Observable;
 
 /**
@@ -9,5 +11,5 @@ import rx.Observable;
  */
 
 public interface AppDataStore {
-    Observable<Post> getPost();
+    Observable<List<Post>> getPost();
 }
