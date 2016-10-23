@@ -2,6 +2,7 @@ package com.ladwa.aditya.offlinefirstapp.data.local;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.ladwa.aditya.offlinefirstapp.data.AppDataStore;
 import com.ladwa.aditya.offlinefirstapp.data.local.models.Post;
@@ -20,6 +21,7 @@ import javax.inject.Inject;
 import rx.Observable;
 
 /**
+ *
  * Created by Aditya on 23-Oct-16.
  */
 
@@ -42,6 +44,7 @@ public class AppLocalDataStore implements AppDataStore {
 
     @Override
     public Observable<List<Post>> getPost() {
+        Log.d("LOCAL","Loaded from local");
         return mStorIOContentResolver.get()
                 .listOfObjects(Post.class)
                 .withQuery(Query.builder().uri(DatabaseContract.Post.CONTENT_URI).build())

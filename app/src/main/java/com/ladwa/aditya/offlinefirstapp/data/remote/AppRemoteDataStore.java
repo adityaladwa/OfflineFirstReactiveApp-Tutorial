@@ -1,5 +1,7 @@
 package com.ladwa.aditya.offlinefirstapp.data.remote;
 
+import android.util.Log;
+
 import com.ladwa.aditya.offlinefirstapp.App;
 import com.ladwa.aditya.offlinefirstapp.data.AppDataStore;
 import com.ladwa.aditya.offlinefirstapp.data.local.AppLocalDataStore;
@@ -33,6 +35,8 @@ public class AppRemoteDataStore implements AppDataStore {
 
     @Override
     public Observable<List<Post>> getPost() {
+        Log.d("REMOTE","Loaded from remote");
+
         return retrofit.create(PostService.class).getPostList().doOnNext(new Action1<List<Post>>() {
             @Override
             public void call(List<Post> posts) {

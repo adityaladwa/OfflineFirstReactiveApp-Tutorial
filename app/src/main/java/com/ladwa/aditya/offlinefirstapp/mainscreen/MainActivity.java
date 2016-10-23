@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.ladwa.aditya.offlinefirstapp.App;
 import com.ladwa.aditya.offlinefirstapp.R;
+import com.ladwa.aditya.offlinefirstapp.data.AppRepository;
 import com.ladwa.aditya.offlinefirstapp.data.local.models.Post;
 import com.ladwa.aditya.offlinefirstapp.data.remote.AppRemoteDataStore;
 
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements MainScreenContrac
     ArrayAdapter<String> adapter;
 
     @Inject
-    AppRemoteDataStore repository;
+    AppRepository repository;
 
     SwipeRefreshLayout swipeContainer;
 

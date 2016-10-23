@@ -22,10 +22,10 @@ public class MainScreenPresenter implements MainScreenContract.Presenter {
     private static final String TAG = MainScreenPresenter.class.getSimpleName();
     private Subscription mSubscription;
 
-    private AppRemoteDataStore mAppRepository;
+    private AppRepository mAppRepository;
     private MainScreenContract.View mView;
 
-    public MainScreenPresenter(AppRemoteDataStore mAppRepository, MainScreenContract.View mView) {
+    public MainScreenPresenter(AppRepository mAppRepository, MainScreenContract.View mView) {
         this.mAppRepository = mAppRepository;
         this.mView = mView;
         mView.setPresenter(this);
