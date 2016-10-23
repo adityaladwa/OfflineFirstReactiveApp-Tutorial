@@ -42,7 +42,7 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
 
-
+    //StorIO
     compile "com.pushtorefresh.storio:sqlite:1.9.0"
     compile "com.pushtorefresh.storio:content-resolver:1.9.0"
     compile "com.pushtorefresh.storio:sqlite-annotations:1.9.0"
