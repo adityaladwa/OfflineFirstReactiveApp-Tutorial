@@ -1,5 +1,6 @@
 package com.ladwa.aditya.offlinefirstapp.data.remote;
 
+import com.ladwa.aditya.offlinefirstapp.App;
 import com.ladwa.aditya.offlinefirstapp.data.AppDataStore;
 import com.ladwa.aditya.offlinefirstapp.data.local.models.Post;
 
@@ -23,6 +24,7 @@ public class AppRemoteDataStore implements AppDataStore {
     private static AppRemoteDataStore INSTANCE = null;
 
     private AppRemoteDataStore() {
+        App.getAppComponent().inject(this);
     }
 
     public static AppRemoteDataStore getInstance() {

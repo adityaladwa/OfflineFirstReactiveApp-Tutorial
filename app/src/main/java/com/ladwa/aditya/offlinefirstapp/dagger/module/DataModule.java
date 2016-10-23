@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.ladwa.aditya.offlinefirstapp.data.remote.AppRemoteDataStore;
 
 import javax.inject.Singleton;
 
@@ -70,5 +71,11 @@ public class DataModule {
                 .client(okHttpClient)
                 .build();
         return retrofit;
+    }
+
+    @Provides
+    @Singleton
+    AppRemoteDataStore providesRepository() {
+        return AppRemoteDataStore.getInstance();
     }
 }
