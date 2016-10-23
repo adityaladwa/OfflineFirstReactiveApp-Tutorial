@@ -10,6 +10,7 @@ import com.google.gson.GsonBuilder;
 
 import javax.inject.Singleton;
 
+import dagger.Module;
 import dagger.Provides;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
@@ -21,6 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Aditya on 23-Oct-16.
  */
 
+@Module
 public class DataModule {
     String mBaseUrl;
 
