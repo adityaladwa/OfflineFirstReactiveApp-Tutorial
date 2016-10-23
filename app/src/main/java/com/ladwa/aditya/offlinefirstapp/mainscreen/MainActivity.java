@@ -11,14 +11,13 @@ import com.ladwa.aditya.offlinefirstapp.App;
 import com.ladwa.aditya.offlinefirstapp.R;
 import com.ladwa.aditya.offlinefirstapp.data.AppRepository;
 import com.ladwa.aditya.offlinefirstapp.data.local.models.Post;
-import com.ladwa.aditya.offlinefirstapp.data.remote.AppRemoteDataStore;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 
-public class MainActivity extends AppCompatActivity implements MainScreenContract.View,SwipeRefreshLayout.OnRefreshListener {
+public class MainActivity extends AppCompatActivity implements MainScreenContract.View, SwipeRefreshLayout.OnRefreshListener {
 
     private MainScreenContract.Presenter mPresenter;
 
@@ -59,11 +58,26 @@ public class MainActivity extends AppCompatActivity implements MainScreenContrac
     @Override
     public void showError(String message) {
         Toast.makeText(this, "Error loading post", Toast.LENGTH_SHORT).show();
+        if (swipeContainer != null)
+            swipeContainer.post(new Runnable() {
+                @Override
+                public void run() {
+                    swipeContainer.setRefreshing(false);
+                }
+            });
     }
 
     @Override
     public void showComplete() {
         Toast.makeText(this, "Completed loading", Toast.LENGTH_SHORT).show();
+
+        if (swipeContainer != null)
+            swipeContainer.post(new Runnable() {
+                @Override
+                public void run() {
+                    swipeContainer.setRefreshing(false);
+                }
+            });
     }
 
     @Override
@@ -85,6 +99,6 @@ public class MainActivity extends AppCompatActivity implements MainScreenContrac
 
     @Override
     public void onRefresh() {
-
+        mPresenter.loadPostFromRemoteDatatore();
     }
 }

@@ -23,5 +23,6 @@ public class MainScreenContract {
 
     interface Presenter extends BasePresenter {
         void loadPost();
+        void loadPostFromRemoteDatatore();
     }
 }

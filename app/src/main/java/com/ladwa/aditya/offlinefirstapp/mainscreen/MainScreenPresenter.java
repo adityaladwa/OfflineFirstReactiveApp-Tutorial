@@ -21,7 +21,6 @@ public class MainScreenPresenter implements MainScreenContract.Presenter {
 
     private static final String TAG = MainScreenPresenter.class.getSimpleName();
     private Subscription mSubscription;
-
     private AppRepository mAppRepository;
     private MainScreenContract.View mView;
 
@@ -52,6 +51,31 @@ public class MainScreenPresenter implements MainScreenContract.Presenter {
                     @Override
                     public void onNext(List<Post> posts) {
                         mView.showPosts(posts);
+                    }
+                });
+    }
+
+    @Override
+    public void loadPostFromRemoteDatatore() {
+        new AppRemoteDataStore().getPost().observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.newThread())
+                .subscribe(new Observer<List<Post>>() {
+                    @Override
+                    public void onCompleted() {
+                        Log.d(TAG, "Complete");
+                        mView.showComplete();
+                        loadPost();
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.d(TAG, e.toString());
+                        mView.showError(e.toString());
+                    }
+
+                    @Override
+                    public void onNext(List<Post> posts) {
+
                     }
                 });
     }
