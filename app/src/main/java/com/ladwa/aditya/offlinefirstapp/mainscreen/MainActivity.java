@@ -20,10 +20,9 @@ import javax.inject.Inject;
 public class MainActivity extends AppCompatActivity implements MainScreenContract.View, SwipeRefreshLayout.OnRefreshListener {
 
     private MainScreenContract.Presenter mPresenter;
-
-    ListView listView;
-    ArrayList<String> list;
-    ArrayAdapter<String> adapter;
+    private ListView listView;
+    private ArrayList<String> list;
+    private ArrayAdapter<String> adapter;
 
     @Inject
     AppRepository repository;

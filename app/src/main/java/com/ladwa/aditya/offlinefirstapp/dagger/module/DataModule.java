@@ -87,10 +87,4 @@ public class DataModule {
         return new AppRemoteDataStore();
     }
 
-//    @Provides
-//    @Singleton
-//    AppRepository providesRepository(Application context){
-//        return
-//    }
-
 }
