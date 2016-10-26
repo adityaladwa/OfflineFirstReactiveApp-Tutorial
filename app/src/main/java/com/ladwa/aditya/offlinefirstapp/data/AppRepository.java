@@ -1,7 +1,5 @@
 package com.ladwa.aditya.offlinefirstapp.data;
 
-import android.util.Log;
-
 import com.ladwa.aditya.offlinefirstapp.data.local.AppLocalDataStore;
 import com.ladwa.aditya.offlinefirstapp.data.local.models.Post;
 import com.ladwa.aditya.offlinefirstapp.data.remote.AppRemoteDataStore;
@@ -35,7 +33,8 @@ public class AppRepository implements AppDataStore {
                 .first(new Func1<List<Post>, Boolean>() {
                     @Override
                     public Boolean call(List<Post> posts) {
-                        Log.d("Repo", posts.get(0).getTitle());
+                        //Commeted this log due Arrayindexoutofbound exception at first lauch of application
+//                        Log.d("Repo", posts.get(0).getTitle());
                         return posts != null;
                     }
                 });
