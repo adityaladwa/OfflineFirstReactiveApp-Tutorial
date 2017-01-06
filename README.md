@@ -2,8 +2,6 @@
 
 ## A little effort to architecture apps for offline first use-case
 
-----------------------------------------------------------------------------------------------------
-
 ## License
 
 ```
