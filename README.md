@@ -9,6 +9,8 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/LadwaAditya.svg?style=social)](https://twitter.com/adi_ladwa)
 
 
+### Find a comprehensive guide about this architecture in the [Medium Blog Post](https://medium.com/@ladwa.aditya/offline-first-reactive-android-apps-repository-pattern-mvp-dagger-2-rxjava-contentprovider-8fa379d9caad#.5ghuu8p7j)
+
 ### Libraries used
 
 1.  [StorIO](https://github.com/pushtorefresh/storio)
