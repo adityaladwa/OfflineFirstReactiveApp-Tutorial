@@ -9,9 +9,9 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/LadwaAditya.svg?style=social)](https://twitter.com/adi_ladwa)
 
 
-### Find a comprehensive guide about this architecture in the [Medium Blog Post](https://medium.com/@ladwa.aditya/offline-first-reactive-android-apps-repository-pattern-mvp-dagger-2-rxjava-contentprovider-8fa379d9caad#.5ghuu8p7j)
+## Find a comprehensive guide about this architecture in the [Medium Blog Post](https://medium.com/@ladwa.aditya/offline-first-reactive-android-apps-repository-pattern-mvp-dagger-2-rxjava-contentprovider-8fa379d9caad#.5ghuu8p7j)
 
-### Libraries used
+## Libraries used
 
 1.  [StorIO](https://github.com/pushtorefresh/storio)
 2.  [Dagger 2](http://google.github.io/dagger/)
@@ -21,7 +21,13 @@
 6.  [OkHttp](http://square.github.io/okhttp/)
 7.  [Gson](https://github.com/google/gson)
 
+## Buiding
 
+To build, install and run a debug version, run this from the root of the project:
+
+```
+./gradlew app:assembleDebug
+```
 
 ## License
 
