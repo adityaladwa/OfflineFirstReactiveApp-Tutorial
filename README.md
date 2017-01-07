@@ -1,7 +1,7 @@
 # Offline first reactive android Apps
 [![GitHub stars](https://img.shields.io/github/stars/LadwaAditya/OfflineFirstReactiveApp-Tutorial.svg)](https://github.com/LadwaAditya/OfflineFirstReactiveApp-Tutorial/stargazers) [![GitHub forks](https://img.shields.io/github/forks/LadwaAditya/OfflineFirstReactiveApp-Tutorial.svg)](https://github.com/LadwaAditya/OfflineFirstReactiveApp-Tutorial/network) [![GitHub issues](https://img.shields.io/github/issues/LadwaAditya/OfflineFirstReactiveApp-Tutorial.svg)](https://github.com/LadwaAditya/OfflineFirstReactiveApp-Tutorial/issues)
 
-## A little effort to architecture apps for offline first use-case
+## A little effort to architecture apps for offline first use-case using [MVP-Model View Presenter](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter) and [Repository Architecture](http://deviq.com/repository-pattern/)
 
 
 ### Show some :heart: and star the repo to support the project
